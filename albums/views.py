@@ -1,17 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Album
 
-# Create your views here.
 def add_album(request):
-    return
+    albums = Album.objects.all()
+    return render(request, "albums/list_albums.html", {"albums": albums})
 
 def album_detail(request):
-    return
+    albums = Album.objects.all()
+    return render(request, "albums/list_albums.html", {"albums": albums})
 
 def delete_album(request):
-    return
+    albums = Album.objects.all()
+    return render(request, "albums/list_albums.html", {"albums": albums})
 
 def edit_album(request):
-    return
+    albums = Album.objects.all()
+    return render(request, "albums/list_albums.html", {"albums": albums})
 
 def list_albums(request):
-    return
+    albums = Album.objects.all()
+    return render(request, "albums/list_albums.html", {"albums": albums})
