@@ -1,1 +1,16 @@
-<h1>Test</h1>
+<h1>Edit Album</h1>
+
+<div>
+    <p><a href="{% url 'list_albums' %}">Return Home</a></p>
+    <form action="{% url 'edit_album' pk=album.pk %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div>
+        <button type="submit" name="Update">Update Album</button>
+      </div>
+      <div>
+        <button type="submit" name="Delete">Delete Album</button>
+      </div>
+    </form>
+    
+  </div>

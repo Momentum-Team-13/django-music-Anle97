@@ -1,0 +1,16 @@
+<h1>Album Detail</h1>
+
+<div class="album">
+    <p><a href="{% url 'list_albums' %}">Return Home</a></p>
+    <p1>Album Name: </p1>{{ album.title }} <br>
+    <p1>Artist Name: </p1>{{ album.artist }} <br>
+    
+    {% if album.date %}
+        <p1>Album Release Date: </p1>{{ album.date }} <br>
+    {% endif %}
+    {% if album.songcount %}
+        <p1>Album Song Count: </p1>{{ album.songcount }} <br>
+    {% endif %}
+    </div>
+
+</div>
