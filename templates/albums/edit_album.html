@@ -2,15 +2,14 @@
 
 <div>
     <p><a href="{% url 'list_albums' %}">Return Home</a></p>
-    <form action="{% url 'edit_album' pk=album.pk %}" method="POST">
+    <form name="Update" action="{% url 'edit_album' pk=album.pk %}" method="POST">
       {% csrf_token %}
       {{ form.as_p }}
       <div>
         <button type="submit" name="Update">Update Album</button>
       </div>
-      <div>
-        <button type="submit" name="Delete">Delete Album</button>
-      </div>
     </form>
-    
-  </div>
+    <div>
+        <a name="Delete" href = "{% url 'delete_album' pk=album.pk %}" method="POST">Delete Album</a>
+    </div>
+</div>
