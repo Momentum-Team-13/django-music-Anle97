@@ -1,15 +1,31 @@
-<h1>Edit Album</h1>
+{% load static %}
 
-<div>
-    <p><a href="{% url 'list_albums' %}">Return Home</a></p>
-    <form name="Update" action="{% url 'edit_album' pk=album.pk %}" method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <title>Edit Album</title>
+</head>
+<body>
+  <h1>Edit Album</h1>
+
+  <div>
+      <p><a href="{% url 'list_albums' %}">Return Home</a></p>
+      <form name="Update" action="{% url 'edit_album' pk=album.pk %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+          <button type="submit" name="Update">Update Album</button>
+        </div>
+      </form>
       <div>
-        <button type="submit" name="Update">Update Album</button>
+          <a name="Delete" href = "{% url 'delete_album' pk=album.pk %}" method="POST">Delete Album</a>
       </div>
-    </form>
-    <div>
-        <a name="Delete" href = "{% url 'delete_album' pk=album.pk %}" method="POST">Delete Album</a>
-    </div>
-</div>
+  </div>  
+</body>
+</html>
